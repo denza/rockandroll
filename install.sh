@@ -6,6 +6,13 @@ printf "# Install nginx ingress \n"
 # helm install stable/nginx-ingress
 minikube addons enable ingress
 
+printf "# Install Postgres \n"
+kubectl apply -f k8s/postgres.configmap.yml
+kubectl apply -f k8s/postgres.volume.yml
+kubectl apply -f k8s/postgres.deployment.yml
+kubectl apply -f k8s/postgres.service.yml
+printf "# Postgres installed \n\n"
+
 printf "# Install spring app \n"
 kubectl apply -f k8s/spring.deployment.yml
 kubectl apply -f k8s/spring.service.yml
