@@ -1,9 +1,5 @@
 #!/bin/bash
-printf "# Init helm on kubernetes \n"
-# helm init
-
-printf "# Install nginx ingress \n"
-# helm install stable/nginx-ingress
+printf "# Enable ingress \n"
 minikube addons enable ingress
 
 printf "# Install Postgres \n"
